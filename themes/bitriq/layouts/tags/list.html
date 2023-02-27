@@ -1,0 +1,28 @@
+{{ define "main" }}
+<section>
+  <h1>{{ .Title }}</h1>
+  <article class="tag">
+    <ul class="tag__ul">
+      {{ range .Pages.ByPublishDate.Reverse }}
+      {{ if (eq (countwords .Params.description) 0) }}
+      <li class="tag__li-tag">
+	<a href="{{ .RelPermalink }}">
+	  <h4>{{ .Title }}</h4>
+	</a>
+      </li>
+      {{ else }}
+      <li class="tag__li-post">
+	<a href="{{ .RelPermalink }}">
+	  <div>
+	    <h4>{{ .Title }}</h4>
+	    <small>author: {{ .Params.author }}</small>
+	    <p>{{ .Params.description }}</p>
+	  </div>
+	</a>
+      </li>
+      {{ end }}
+      {{ end }}
+    </ul>
+  </article>
+</section>
+{{ end }}

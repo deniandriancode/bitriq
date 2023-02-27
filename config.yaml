@@ -1,0 +1,67 @@
+baseURL: "http://example.org/" # TODO: Change to real website
+languageCode: "en-us"
+title: "Bitriq"
+theme: "bitriq"
+draft: false
+
+autoHeadingID: true
+tableOfContents:
+  endLevel: 3
+  ordered: false
+  startLevel: 2
+
+enableEmoji: true
+enableInlineShortcodes: true
+enableRobotsTXT: true
+summaryLength: 30
+
+params:
+  author: "deniandriancode"
+  email: "deniandriancode@gmail.com"
+  github: "https://github.com/deniandriancode"
+  homeNav: "Bitriq" 				# brand/logo
+  description: "Some quick content to describe the post"
+  toc: true
+
+menu:
+  main:
+    - name: "Home"
+      url: "/"
+      pre: "home"
+      weight: 1
+    - name: "Posts"
+      url: "/posts"
+      pre: "posts"
+      weight: 2
+    - name: "Tags"
+      url: "/tags"
+      pre: "tags"
+      weight: 3
+    - name: "About"
+      url: "/about"
+      pre: "about"
+      weight: 4
+    - name: "Search"
+      url: "/search"
+      pre: "search"
+      weight: 5
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+  posts:
+    - HTML
+    - RSS
+    - JSON
+
+related:
+  includeNewer: true
+  indices:
+  - name: keywords
+    weight: 10
+  - name: date
+    weight: 20
+  threshold: 80
+  toLower: false

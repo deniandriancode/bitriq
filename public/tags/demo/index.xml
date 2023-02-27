@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>demo on Bitriq</title>
+    <link>http://example.org/tags/demo/</link>
+    <description>Recent content in demo on Bitriq</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 26 Feb 2023 21:56:31 +0700</lastBuildDate><atom:link href="http://example.org/tags/demo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Asdf</title>
+      <link>http://example.org/posts/asdf/</link>
+      <pubDate>Sun, 26 Feb 2023 21:56:31 +0700</pubDate>
+      
+      <guid>http://example.org/posts/asdf/</guid>
+      <description>Penicillin Penicillins (P, PCN or PEN) are a group of β-lactam antibiotics originally obtained from Penicillium moulds, principally P. chrysogenum and P. rubens. Most penicillins in clinical use are synthesised by P.</description>
+    </item>
+    
+  </channel>
+</rss>

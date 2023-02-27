@@ -1,0 +1,20 @@
+{{ $author := print .Params.author }}
+{{ $email := print .Params.email }}
+{{ $dateTime := .Date | time.Format ":date_full" }}
+{{ $tags := .Params.tags }}
+
+<div>
+  <p>{{ $author }}</p>
+  <div>
+    <small>{{ $email }}</small>
+  </div>
+  <time>{{ $dateTime }}</time>
+  <ul>
+    {{ range $tags }}
+    {{ $href := print "/tags/" . }}
+    <li><a href="{{ $href }}">{{ . }}</a></li>
+    {{ end }}
+  </ul>
+  {{ partial "word_count.html" . }}
+  {{ partial "reading_time.html" . }}
+</div>

@@ -1,0 +1,24 @@
+{{ define "main" }}
+<section>
+  <h1>{{ .Title }}</h1>
+  <article>
+    <div>
+      {{ .Content }}
+    </div>
+    <ul>
+      {{ range (.Paginator 10).Pages.ByPublishDate.Reverse }}
+      <li>
+	<a href="{{ .RelPermalink }}">
+	  <div>
+	    <h4>{{ .Title }}</h4>
+	    <small>author: {{ .Params.author }}</small>
+	    <p>{{ .Params.description | truncate 100 }}</p>
+	  </div>
+	</a>
+      </li>
+      {{ end }}
+    </ul>
+    {{ template "_internal/pagination.html" . }}
+  </article>
+</section>
+{{ end }}

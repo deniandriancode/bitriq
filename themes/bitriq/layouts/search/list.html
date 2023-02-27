@@ -1,0 +1,18 @@
+{{ define "main" }}
+<section>
+  <h1>{{ .Title }}</h1>
+  <article>
+    {{ .Content }}
+  </article>
+  <article class="search">
+    <form class="search__form" id="search__form" autocomplete="off">
+      <input name="search" type="text" placeholder="Search posts" spellcheck="false"/>
+      <!-- <button type="submit">Search</button> -->
+    </form>
+  </article>
+  <article class="search-result">
+    <ul class="search-result__list"></ul>
+  </article>
+</section>
+<script type="text/javascript" src="/js/search.js"></script>
+{{ end }}

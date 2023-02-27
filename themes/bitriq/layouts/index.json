@@ -1,0 +1,14 @@
+[
+    {{ range $.Site.RegularPages -}}
+    {
+        
+        "url" : "{{ .Permalink }}",
+        "title" : "{{ .Title }}",
+	"description": "{{ .Params.Description }}",
+	"author": "{{ .Params.author }}",
+        "content": {{ .Content | plainify | jsonify }}
+    },
+    {{ end -}}
+    {}
+]
+

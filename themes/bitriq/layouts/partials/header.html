@@ -1,0 +1,16 @@
+<nav>
+  <div>
+    <a href="/">{{ .Site.Params.homeNav }}</a>
+  </div>
+  <div>
+    <ul>
+      {{ range .Site.Menus.main }}
+      <li>
+	<a href="{{ .URL }}">
+	  {{ .Name }}
+	</a>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+</nav>

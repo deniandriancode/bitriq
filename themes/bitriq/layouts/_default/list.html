@@ -1,0 +1,14 @@
+{{ define "main" }}
+<section>
+  <h1>{{ .Title }}</h1>
+  {{ range .Pages.ByPublishDate.Reverse }}
+  {{ partial "metadata.html" . }}
+  <p>
+    <a href="{{ .RelPermalink }}">
+      <h4>{{ .Title }}</h4>
+      <p>{{ .Params.description }}</p>
+    </a>
+  </p>
+  {{ end }}
+</section>
+{{ end }}

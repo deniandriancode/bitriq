@@ -1,0 +1,46 @@
+{{ define "main" }}
+<section>
+  <h1>{{ .Title }}</h1>
+  <p>{{ .Description }}</p>
+  <article>
+    {{ partial "metadata.html" . }}
+  </article>
+  {{ if .Site.Params.toc }}
+  <article>
+    <h4>Table of Contents</h4>
+    <div>
+      {{ .TableOfContents }}
+    </div>
+  </article>
+  {{ end }}
+  <article>
+    {{ .Content }}
+  </article>
+
+  <article>
+    {{ partial "related.html" . }}
+  </article>
+  
+  <article>
+    {{ if .PrevPage }}
+    <a href="{{ .PrevPage.RelPermalink }}">
+      <div>
+	&lt;&lt;
+	<h5>{{ .PrevPage.Title }}</h5>
+      	<p>{{ .Params.description | truncate 50 }}</p>
+      </div>
+    </a>
+    {{ end }}
+    {{ if .NextPage }}
+    <a href="{{ .NextPage.RelPermalink }}">
+      <div>
+	<h5>{{ .NextPage.Title }}</h5>
+      	<p>{{ .Params.description | truncate 50 }}</p>
+	&gt;&gt;
+      </div>
+    </a>
+    {{ end }}
+  </article>
+  
+</section>
+{{ end }}

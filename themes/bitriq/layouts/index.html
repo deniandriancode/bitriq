@@ -1,0 +1,24 @@
+{{ define "main" }}
+<section>
+  <h1>{{ .Title }}</h1>
+  <article>
+    <p>Ullamcorper malesuada proin libero nunc, consequat interdum varius sit amet, mattis vulputate enim nulla aliquet porttitor lacus, luctus accumsan tortor. Et ligula ullamcorper malesuada proin libero nunc, consequat interdum varius.</p>
+    <p>At augue eget arcu dictum varius duis? Sit amet facilisis magna etiam tempor, orci eu lobortis elementum, nibh tellus molestie nunc, non blandit massa enim nec dui nunc mattis enim?</p>
+  </article>
+  <article>
+    <h4>Recent Posts</h4>
+    <ul>
+      {{ range first 10 (where .Site.RegularPages "Type" "posts") }}
+      <li>
+	<a href="{{ .RelPermalink }}">
+	  <div>
+	    <h5>{{ .Title }}</h5>
+	    <p>{{ .Params.description | truncate 85 }}</p>
+	  </div>
+	</a>
+      </li>
+      {{ end }}
+    </ul>
+  </article>
+</section>
+{{ end }}
